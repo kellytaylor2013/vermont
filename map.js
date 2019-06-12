@@ -65,7 +65,6 @@ function naturePopup(e){
 function imageLegend (e){
     var layer = e.target;
     var mapLegend = document.getElementById('map-legend');
-    mapLegend.innerHTML = layer.feature.properties.Name
     mapLegend.innerHTML = layer.feature.properties.pics
     }
 
