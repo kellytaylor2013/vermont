@@ -17,6 +17,7 @@ body {
     color: #373838;
 }
 
+/*Style contact link*/
 a {
     text-decoration: none;
     color: #373838;
@@ -42,7 +43,7 @@ a {
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 2;
-    /*Flex*/
+/*Flex*/
     display:flex;
     align-items: center;
 }
@@ -57,7 +58,7 @@ a {
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 4;
-    
+/*Flex*/
     display: flex;
     flex-direction: column;
     overflow: auto;
