@@ -58,6 +58,7 @@ function naturePopup(e){
     layer.bindPopup(`
         <h3>${layer.feature.properties.Name}</h3>
         <p><b>Where is it?</b> ${layer.feature.properties.Location}</p>
+	<p><b>What's there?</b> ${layer.feature.properties.Type}</p>
         <p><b>What can I do there?</b> ${layer.feature.properties.Activities}</p>
         `,)
     }
