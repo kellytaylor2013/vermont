@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--load in my css-->
+    <link href='./main.css' rel='stylesheet' />
+
+    <!--load in leaflet css and js-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+    <!--load in esri leaflet js-->
+    <script src="https://unpkg.com/esri-leaflet@2.2.4/dist/esri-leaflet.js" integrity="sha512-tyPum7h2h36X52O2gz+Pe8z/3l+Y9S1yEUscbVs5r5aEY5dFmP1WWRY/WLLElnFHa+k1JBQZSCDGwEAnm2IxAQ==" crossorigin=""></script>
+
+    <!--ESRI Leaflet Renderer-->
+    <script src="https://unpkg.com/esri-leaflet-renderers@2.0.6"></script>
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Muli|Poppins:400,500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class='app-container'>
+        <div class='nav-container'>
+            <div>
+                <img id='logo' src='https://www.vermont.gov/themes/custom/vt2018/images/svg/vermont-logo-stacked.svg' />
+            </div>
+            <div id="title"><h3>Beautiful & Delicious Things In Vermont</h3></div>
+            <div id=spacer></div>
+            <div id='contact'><a href="mailto:kelly.taylor6@pcc.edu">Contact</a></div>
+        </div>
+
+        <div class='side-pane-container'>
+            <div id='side-pane-title'>
+                <h4>Where do you want to adventure today?</h4>
+                <h5>Click a point to learn more</h5>
+            </div>
+            <div id='map-legend'></div>
+        </div>
+        <div class='map-container'>
+            <div id='map'></div>
+        </div>
+    </div>
+    <script src='./map.js'></script>
+</body></html>
