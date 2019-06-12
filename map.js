@@ -18,9 +18,11 @@ var nature = L.esri.featureLayer({
     url: 'https://services8.arcgis.com/tblHe99qQFMcNzpC/arcgis/rest/services/VT_nature_things/FeatureServer/0?token=MfrjVFgUdXCNiF7Pt7BmM8F__dNRJLJ_W9jPFq2r837uCaKXbzBLNvFvgPvIgZXxdKGX_KcTJtbqS-MkEEGOo2kIJiT_WoF5oWefLXFTxeCmMHVt4CYEAGXLe8Q5MlPDzJo5A1OsM5f_nZDuuxgj93gkLgTgo4773ePTsuVSTciQr79a-feRWt3pzmejkSU2fOjjSzaw6R8prdkGXGdMlCiiLFHRPBpK0QI0z5sBOzzCOhwqRrj4XL6Kd_q69r2d3AEMdoY1eu7OeZkZJ1HGjA..',
     simplifyFactor: 0.5,
     precision: 5,
+//popup and map-legend on click of features 	
     onEachFeature: onEachFeature,
 })
 
+//set bounds of map
 var corner1 = L.latLng(47, -75),
     corner2 = L.latLng(42, -71),
     bounds = L.latLngBounds(corner1, corner2);
@@ -33,12 +35,13 @@ var map = L.map('map', {
     minZoom: 8,
     maxZoom: 15,
     layers: [CartoDB_Positron, food, nature],
+//use bounds var to limit panning
     maxBounds: bounds,
     maxBoundsViscosity: 1,
 })
 
 
-
+//function to create a popup on click of a food feature
 function foodFeature(feature, layer) {
     if (feature.properties) {
         layer.bindPopup(`
@@ -49,7 +52,7 @@ function foodFeature(feature, layer) {
     }
 }
 
-
+//function to create popup on click of nature feature
 function naturePopup(e){
     var layer =e.target;
     layer.bindPopup(`
@@ -58,7 +61,7 @@ function naturePopup(e){
         <p><b>What can I do there?</b> ${layer.feature.properties.Activities}</p>
         `,)
     }
-    
+//function to fill in map-legend with a photo on click of nature feature
 function imageLegend (e){
     var layer = e.target;
     var mapLegend = document.getElementById('map-legend');
@@ -66,6 +69,9 @@ function imageLegend (e){
     mapLegend.innerHTML = layer.feature.properties.pics
     }
 
+//function that can be passed to nature layer onEachFeature
+//wouldn't allow me to set them both to click but when I wrote it this
+//way they both work on a click (??)
 function onEachFeature(feature, layer){
     layer.on({
         mouseover:naturePopup,
